@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Координаты</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <nav id="menu"></nav>
+  <main>
+    <div class="toolbar">
+      <h2>Координаты</h2>
+      <span class="grow"></span>
+      <button class="primary" id="btnCreate">Создать координаты</button>
+    </div>
+    <div class="tablewrap">
+      <table>
+        <thead>
+          <tr><th>ID</th><th>X</th><th>Y</th><th>Используется (шт.)</th><th>Действия</th></tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+  </main>
+
+  <dialog id="coordDialog">
+    <form id="coordForm" novalidate>
+      <h2 id="dlgTitle"></h2>
+      <label>Координата X (целое число)<input name="x" type="number" step="1" required></label>
+      <label>Координата Y (целое число, больше -913)<input name="y" type="number" step="1" required></label>
+      <ul class="errors" id="formErrors"></ul>
+      <div class="buttons">
+        <button type="button" id="btnCancel">Отмена</button>
+        <button type="submit" class="primary">Сохранить</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="/js/common.js"></script>
+  <script src="/js/coordinates.js"></script>
+</body>
+</html>
