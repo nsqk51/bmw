@@ -1,0 +1,13 @@
+#!/bin/sh
+# Пример скрипта запуска на helios. Скопируйте в ~/run.sh, подставьте свои значения и выполните: chmod 700 ~/run.sh
+export DB_HOST=localhost       # Postgres на helios слушает только ::1, поэтому localhost, а не pg
+export DB_PORT=5432
+export DB_NAME=studs
+export DB_USER=s000000         # ваш логин на helios
+export DB_PASSWORD='ваш_пароль'
+export DB_SCHEMA=vehicles_lab    # схема для этой лабы (создаётся один раз: CREATE SCHEMA vehicles_lab;)
+export PORT=18000              # свободный порт (проверка: sockstat -l | grep :18000)
+
+# флаги IPv6 нужны, потому что Postgres доступен только по ::1
+exec java -Djava.net.preferIPv4Stack=false -Djava.net.preferIPv6Addresses=true \
+  -jar "$HOME/vehicles-1.0.0.jar"
