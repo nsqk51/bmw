@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Спецоперации</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <nav id="menu"></nav>
+  <main>
+    <h2>Специальные операции</h2>
+
+    <section class="card">
+      <h2>1. Сумма значений fuelConsumption для всех объектов</h2>
+      <button id="btnSum">Выполнить</button>
+      <div class="result" id="resSum"></div>
+    </section>
+
+    <section class="card">
+      <h2>2. Количество объектов, у которых fuelType меньше заданного</h2>
+      <form id="lessForm">
+        <label>Тип топлива<select name="fuelType"></select></label>
+        <button type="submit">Выполнить</button>
+      </form>
+      <div class="muted">Порядок: KEROSENE &lt; DIESEL &lt; ALCOHOL &lt; ANTIMATTER</div>
+      <div class="result" id="resLess"></div>
+    </section>
+
+    <section class="card">
+      <h2>3. Объекты, у которых name содержит подстроку</h2>
+      <form id="nameForm">
+        <label>Подстрока<input name="substring" maxlength="255"></label>
+        <button type="submit">Найти</button>
+      </form>
+      <div class="result" id="resName"></div>
+    </section>
+
+    <section class="card">
+      <h2>4. Все транспортные средства заданного типа</h2>
+      <form id="typeForm">
+        <label>Тип<select name="type"></select></label>
+        <button type="submit">Найти</button>
+      </form>
+      <div class="result" id="resType"></div>
+    </section>
+
+    <section class="card">
+      <h2>5. Транспортные средства с числом колёс в диапазоне</h2>
+      <form id="wheelsForm">
+        <label>От (включительно)<input name="min" type="number" step="1"></label>
+        <label>До (включительно)<input name="max" type="number" step="1"></label>
+        <button type="submit">Найти</button>
+      </form>
+      <div class="result" id="resWheels"></div>
+    </section>
+  </main>
+
+  <script src="/js/common.js"></script>
+  <script src="/js/special.js"></script>
+</body>
+</html>
